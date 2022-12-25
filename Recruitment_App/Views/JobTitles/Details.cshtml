@@ -1,0 +1,148 @@
+﻿@using Recruitment_App.Repo.Entities;
+@model JobTitle;
+
+@{
+    ViewData["Title"] = "Edit Job " + Model.Name;
+    ViewData["Controller"] = "JobTitles";
+    ViewData["SaveAction"] = "EditJobTitles";
+    ViewData["BackAction"] = "";
+
+
+    var skillsList = ViewBag.skillsList as List<Skill>;
+    var selectListSkillsList = new SelectList(skillsList, "Id", "SkillName");
+    var jobCategoriesList = ViewBag.jobCategoriesList as List<JobCategory>;
+}
+
+<form asp-action="EditJobTitle">
+    @await Html.PartialAsync("_PageHeaderWithButtons")
+    @Html.HiddenFor(x=>x.Id)
+    <div class="row m-2">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row m-2">
+                        <div class="col">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row m-2">
+                                <div class="form-group col-6">
+                                    <label asp-for="Name" class="form-label text-color-dark text-3"></label>
+                                    <span class="text-color-danger"> *</span>
+                                    <input asp-for="Name" class="form-control form-control-lg text-4" req />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label asp-for="JobCategory" class="form-label text-color-dark text-3"></label>
+                                    <span class="text-color-danger"> *</span>
+                                    @Html.DropDownListFor(x => x.JobCategoryId, new SelectList(jobCategoriesList, "Id", "JobCategoryName"), htmlAttributes: new { @class = "form-control form-control-lg text-4"})
+                                    <span asp-validation-for="JobCategoryId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row m-2">
+                                <div class="form-group col-6">
+                                    <label asp-for="ValidityDurationFrom" class="form-label text-color-dark text-3"></label>
+                                    <span class="text-color-danger"> *</span>
+                                    <input asp-for="ValidityDurationFrom" class="form-control form-control-lg text-4" req />
+                                    <span asp-validation-for="ValidityDurationFrom" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label asp-for="ValidityDurationTo" class="form-label text-color-dark text-3"></label>
+                                    <span class="text-color-danger"> *</span>
+                                    <input asp-for="ValidityDurationTo" class="form-control form-control-lg text-4" req />
+                                    <span asp-validation-for="ValidityDurationTo" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row m-2">
+                                <div class="form-group col-6">
+                                    <label asp-for="MaximumApplications" class="form-label text-color-dark text-3"></label>
+                                    <span class="text-color-danger"> *</span>
+
+                                    <input type="number" asp-for="MaximumApplications" class="form-control form-control-lg text-4" req />
+                                    <span asp-validation-for="MaximumApplications" class="text-danger"></span>
+                                </div>
+                                @if (selectListSkillsList.Count() > 0)
+                                {
+                                    <div class="form-group col-6">
+                                        <label asp-for="Skills" class="form-label text-color-dark text-3"></label>
+                                        <select asp-for="SelectedSkillsIds" asp-items="selectListSkillsList " class="form-control select2-multiple" data-toggle="select2" data-width="100%" multiple="multiple" data-placeholder="Choose Skills">
+                                        </select>
+                                        <span asp-validation-for="Skills" class="text-danger"></span>
+                                    </div>
+                                }
+                            </div>
+                            <div class="row m-2">
+                                <div class="form-group col">
+                                    <label asp-for="Description" class="form-label text-color-dark text-3"></label>
+                                    <textarea asp-for="Description" req id="DescriptionEditor"></textarea>
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row m-2">
+                                <div class="form-group col">
+                                    <label asp-for="Responsibilities" class="form-label text-color-dark text-3"></label>
+                                    <textarea asp-for="Responsibilities" req id="ResponsibilitiesEditor"></textarea>
+                                    <span asp-validation-for="Responsibilities" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        tinymce.init({
+            selector: '#ResponsibilitiesEditor',
+            menubar: false,
+            statusbar: false,
+            plugins: 'autoresize anchor autolink charmap code codesample directionality fullpage help hr image imagetools insertdatetime link lists media nonbreaking pagebreak preview print searchreplace table template textpattern toc visualblocks visualchars',
+            toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help fullscreen ',
+            skin: 'bootstrap',
+            toolbar_drawer: 'floating',
+            min_height: 200,
+            autoresize_bottom_margin: 16,
+            setup: (editor) => {
+                editor.on('init', () => {
+                    editor.getContainer().style.transition = "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out"
+                });
+                editor.on('focus', () => {
+                    editor.getContainer().style.boxShadow = "0 0 0 .2rem rgba(0, 123, 255, .25)",
+                        editor.getContainer().style.borderColor = "#80bdff"
+                });
+                editor.on('blur', () => {
+                    editor.getContainer().style.boxShadow = "",
+                        editor.getContainer().style.borderColor = ""
+                });
+            }
+        });
+        tinymce.init({
+            selector: '#DescriptionEditor',
+            menubar: false,
+            statusbar: false,
+            plugins: 'autoresize anchor autolink charmap code codesample directionality fullpage help hr image imagetools insertdatetime link lists media nonbreaking pagebreak preview print searchreplace table template textpattern toc visualblocks visualchars',
+            toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help fullscreen ',
+            skin: 'bootstrap',
+            toolbar_drawer: 'floating',
+            min_height: 200,
+            autoresize_bottom_margin: 16,
+            setup: (editor) => {
+                editor.on('init', () => {
+                    editor.getContainer().style.transition = "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out"
+                });
+                editor.on('focus', () => {
+                    editor.getContainer().style.boxShadow = "0 0 0 .2rem rgba(0, 123, 255, .25)",
+                        editor.getContainer().style.borderColor = "#80bdff"
+                });
+                editor.on('blur', () => {
+                    editor.getContainer().style.boxShadow = "",
+                        editor.getContainer().style.borderColor = ""
+                });
+            }
+        });
+    </script>
+    }

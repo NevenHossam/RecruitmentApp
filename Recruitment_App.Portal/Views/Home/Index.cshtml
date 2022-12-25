@@ -1,0 +1,57 @@
+﻿@using Recruitment_App.Repo.Entities;
+@using System.Text
+@model List<JobTitle>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-12">
+                        <table id="items_table" class="table dt-responsive nowrap w-100">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Job Category</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a asp-action="Details" asp-route-id="@item.Id">
+                                                @item.Name
+                                            </a>
+                                        </td>
+                                        <td>@item.JobCategory.JobCategoryName</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+    {
+    <script>
+        $(document).ready(function () {
+            var table = $('#items_table')
+                .DataTable({
+                    "bServerSide": false,
+                    "bProcessing": true,
+                    "bSearchable": true,
+                    "order": [[0, 'asc']],
+                    "paging": true,
+                    "language": {
+                        "emptyTable": "No record found.",
+                        "processing":
+                            '<i class="fa fa-spinner fa-spin fa-3x fa-fw" style="color:#2a2b2b;"></i><span class="sr-only">Loading...</span> '
+                    }
+                });
+        });
+    </script>
+    }

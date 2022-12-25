@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "WysuMlknTliz9NCOsf/6rXcyQZNcQRGr7XofKuhwF3KVvrTwIkZJ/JIG0xEO38WAu4ItvwLyjZl0L2dLgc6rIQ==",
+  "success": false,
+  "projectFilePath": "D:\\Neven\\Rec_App\\Recruitment_App\\Recruitment_App.Admin.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://youxelteam.pkgs.visualstudio.com/_packaging/Youxel%40Local/nuget/v3/index.json.",
+      "libraryId": "Microsoft.AspNet.Mvc"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://youxelteam.pkgs.visualstudio.com/_packaging/Youxel%40Local/nuget/v3/index.json.",
+      "libraryId": "Microsoft.AspNet.Web.Optimization"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://youxelteam.pkgs.visualstudio.com/_packaging/Youxel%40Local/nuget/v3/index.json.",
+      "libraryId": "WebActivatorEx"
+    }
+  ]
+}

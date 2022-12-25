@@ -1,0 +1,15 @@
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\bin\Debug\net6.0\Recruitment_App.Services.deps.json
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\bin\Debug\net6.0\Recruitment_App.Services.dll
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\bin\Debug\net6.0\Recruitment_App.Services.pdb
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\bin\Debug\net6.0\Recruitment_App.Repo.dll
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\bin\Debug\net6.0\Recruitment_App.Repo.pdb
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\obj\Debug\net6.0\Recruitment_App.Services.csproj.AssemblyReference.cache
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\obj\Debug\net6.0\Recruitment_App.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\obj\Debug\net6.0\Recruitment_App.Services.AssemblyInfoInputs.cache
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\obj\Debug\net6.0\Recruitment_App.Services.AssemblyInfo.cs
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\obj\Debug\net6.0\Recruitment_App.Services.csproj.CoreCompileInputs.cache
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\obj\Debug\net6.0\Recruitment_App.Services.csproj.CopyComplete
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\obj\Debug\net6.0\Recruitment_App.Services.dll
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\obj\Debug\net6.0\refint\Recruitment_App.Services.dll
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\obj\Debug\net6.0\Recruitment_App.Services.pdb
+D:\Neven\Recruitment_App\Recruitment_App\Recruitment_App.Services\obj\Debug\net6.0\ref\Recruitment_App.Services.dll

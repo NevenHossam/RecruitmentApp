@@ -1,0 +1,26 @@
+﻿@*@if (ViewBag.AddNewAction != null)
+            {*@
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <div class="page-title-right">
+                            @if(ViewData["IdToAdd"] != null){
+                                <a asp-controller=@ViewData["Controller"] asp-action=@ViewData["AddNewAction"] asp-route-id=@ViewData["IdToAdd"]
+                                class="btn btn-info waves-effect waves-light">
+                                <i class="mdi mdi-plus-circle me-1"></i> Add New
+                            </a>   
+                            }else{
+                                <a asp-controller=@ViewData["Controller"] asp-action=@ViewData["AddNewAction"] class="btn btn-info waves-effect waves-light">
+                                <i class="mdi mdi-plus-circle me-1"></i> Add New
+                            </a>   
+                            }
+                                                     
+
+                        </div>
+                        <h2 class="page-title fw-semibold font-20">@ViewData["Title"]</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+            @*}*@

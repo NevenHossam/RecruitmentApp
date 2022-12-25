@@ -1,0 +1,6 @@
+
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #dee2e6 !important;
+    opacity: 1;
+}

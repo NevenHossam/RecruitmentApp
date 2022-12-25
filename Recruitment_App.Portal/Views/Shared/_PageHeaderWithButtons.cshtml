@@ -1,0 +1,39 @@
+﻿<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                @if (@ViewData["IdToAdd"] != null)
+                {
+                    <button type="submit" name="save" class="btn btn-info waves-effect waves-light"
+                        data-loading-text="Loading...">
+                        <i class='far fa-save'></i> Save
+                    </button>
+
+                
+                    <a asp-controller=@ViewData["Controller"] asp-action=@ViewData["BackAction"] 
+                    asp-route-id=@ViewData["IdToAdd"]
+                   class="btn btn-blue waves-effect waves-light">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </a>
+                }
+                else
+                {
+                    <button type="submit" name="save" class="btn btn-info waves-effect waves-light"
+                        data-loading-text="Loading...">
+                        <i class='far fa-save'></i> Save
+                    </button>
+                   
+                    <a asp-controller=@ViewData["Controller"] asp-action=@ViewData["BackAction"]
+                   class="btn btn-blue waves-effect waves-light">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </a>
+                }
+
+
+            </div>
+            <h2 class="page-title fw-semibold font-20">@ViewData["Title"]</h2>
+        </div>
+    </div>
+</div>
+<!-- end page title -->

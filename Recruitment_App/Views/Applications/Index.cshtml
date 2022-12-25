@@ -1,0 +1,89 @@
+﻿@using Recruitment_App.Repo.Entities;
+@using System.Text
+@model List<Application>
+
+@{
+    ViewData["Title"] = "Applications";
+    ViewData["Controller"] = "Application";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+
+            <h2 class="page-title fw-semibold font-20">@ViewData["Title"]</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-12">
+                    <table id="items_table" class="table dt-responsive nowrap w-100">
+                        <thead>
+                            <tr>
+                                <th>Job</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Applied On</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <a asp-action="Details" asp-controller="JobTitles" target="_blank" asp-route-id="@item.JobTitlesId">
+                                            @item.JobTitles.Name
+                                        </a>
+                                    </td>
+                                    <td>@item.Applicants.Name</td>
+                                    <td>@item.Applicants.Email</td>
+                                    <td>@item.Applicants.MobileNumber</td>
+                                    <td>@item.CreatedOn.ToShortDateString()</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+    {
+    <script>
+
+        $(document).ready(function () {
+            var table = $('#items_table')
+                .DataTable({
+                    "bServerSide": false,
+                    "bProcessing": true,
+                    "bSearchable": true,
+                    "pageLength": 10,
+                    "lengthMenu": [10, 20, 50],
+                    "order": [[0, 'asc']],
+                    "paging": true,
+                    "language": {
+                        "emptyTable": "No record found.",
+                        "processing":
+                            '<i class="fa fa-spinner fa-spin fa-3x fa-fw" style="color:#2a2b2b;"></i><span class="sr-only">Loading...</span> '
+                    }
+                });
+
+          
+
+            $('#myModal').on('shown.bs.modal', function (e) {
+                var id = $(e.relatedTarget).data('id');
+                $('#data').val(id);
+            });
+        });
+
+      
+    </script>
+    }

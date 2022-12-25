@@ -1,0 +1,121 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "FontAwesome.MVC >= 1.0.0",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.12",
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.12",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.11"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\DELL G5\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Neven\\Rec_App\\Recruitment_App\\Recruitment_App.Admin.csproj",
+      "projectName": "Recruitment_App.Admin",
+      "projectPath": "D:\\Neven\\Rec_App\\Recruitment_App\\Recruitment_App.Admin.csproj",
+      "packagesPath": "C:\\Users\\DELL G5\\.nuget\\packages\\",
+      "outputPath": "D:\\Neven\\Rec_App\\Recruitment_App\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\DELL G5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://youxelteam.pkgs.visualstudio.com/_packaging/Youxel%40Local/nuget/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "D:\\Neven\\Rec_App\\Recruitment_App.Services\\Recruitment_App.Services.csproj": {
+              "projectPath": "D:\\Neven\\Rec_App\\Recruitment_App.Services\\Recruitment_App.Services.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "FontAwesome.MVC": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[6.0.12, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.12, )"
+          },
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "target": "Package",
+            "version": "[6.0.11, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://youxelteam.pkgs.visualstudio.com/_packaging/Youxel%40Local/nuget/v3/index.json.",
+      "libraryId": "Microsoft.AspNet.Mvc"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://youxelteam.pkgs.visualstudio.com/_packaging/Youxel%40Local/nuget/v3/index.json.",
+      "libraryId": "Microsoft.AspNet.Web.Optimization"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://youxelteam.pkgs.visualstudio.com/_packaging/Youxel%40Local/nuget/v3/index.json.",
+      "libraryId": "WebActivatorEx"
+    }
+  ]
+}
